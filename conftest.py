@@ -1,25 +1,26 @@
 import pytest
 from selenium import webdriver
-import random
 from locators import Locators
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from data.urls import URLs
+from helpers.helpers import DataGenerator
 
 
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(URLs.BASE_URL)
     yield driver
     driver.quit()
 
 
 @pytest.fixture
-def account_registration(driver, generate_email, generate_password):
+def account_registration(driver):
 
     name = 'Ivan'
-    email = generate_email
-    password = generate_password
+    email = DataGenerator.generate_email()
+    password = DataGenerator.generate_password()
 
     driver.find_element(*Locators.SIGN_IN_ACCOUNT_BUTTON).click()
 
@@ -40,21 +41,6 @@ def account_registration(driver, generate_email, generate_password):
     WebDriverWait(driver, 6).until(
         expected_conditions.visibility_of_element_located(Locators.LOGIN_BUTTON))
 
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(URLs.BASE_URL)
 
     yield email, password
-
-
-@pytest.fixture
-def generate_email():
-    username = ''.join(random.sample('abcdefghijklmnopqrstuvwxyz', random.randint(2, 10)))
-    email = f"{username}@ya.ru"
-    yield email
-
-
-@pytest.fixture
-def generate_password():
-    characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()'
-    password = ''.join(random.sample(characters, random.randint(6, 10)))
-    yield password
-

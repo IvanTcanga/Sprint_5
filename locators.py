@@ -15,38 +15,32 @@ class Locators:
 
 	SIGN_IN_ACCOUNT_BUTTON = (By.XPATH, '//button[ text()="Войти в аккаунт" ]') #кнопка входа в аккаунт
 
-	REGISTRATION_HREF = (By.XPATH, '//*[@id="root"]/div/main/div/div/p[1]/a') #ссылка регистрации
+	REGISTRATION_HREF = (By.XPATH, '//a[ text()="Зарегистрироваться" ]') #ссылка регистрации
 
 	REGISTRATION_BUTTON = (By.XPATH, '//button[ text()="Зарегистрироваться" ]') #кнопка регистрации
 
 	CHECKOUT_BUTTON = (By.XPATH, '//button[ text()="Оформить заказ" ]') #кнопка оформить заказ
 
-	LOGIN_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/form/button') #кнопка войти
+	LOGIN_BUTTON = (By.XPATH, '//button[ text()="Войти" ]') #кнопка войти
 
-	INVALID_PASSWORD_ERROR = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[3]/div/p') #ошибка пароля
+	INVALID_PASSWORD_ERROR = (By.XPATH, '//p[ text()="Некорректный пароль" ]') #ошибка неккоректный пароль
 
-	PERSONAL_ACCOUNT_LINK = (By.XPATH, '//*[@id="root"]/div/header/nav/a/p') #личный кабинет
+	PERSONAL_ACCOUNT_LINK = (By.XPATH, '//p[contains(text(),"Личный Кабинет")]') #личный кабинет
 
-	LOGIN_LINK = (By.XPATH, '//*[@id="root"]/div/main/div/div/p/a') #ссылка на кнопку войти
+	LOGIN_LINK = (By.XPATH, '//a[ text()="Войти" ]') #ссылка на кнопку войти
 
-	RESET_PASSWORD_LINK = (By.XPATH, '//*[@id="root"]/div/main/div/div/p[2]/a') #ссылка на кнопку восстановить пароль
+	RESET_PASSWORD_LINK = (By.XPATH, '//a[ text()="Восстановить пароль" ]') #ссылка на кнопку восстановить пароль
 
-	BUTTON_RESET = (By.XPATH, '//*[@id="root"]/div/main/div/form/button') #кнопка восстановить
+	BUTTON_RESET = (By.XPATH, '//button[ text()="Восстановить" ]') #кнопка восстановить
 
-	BUTTON_EXIT_FROM_ACCOUNT = (By.XPATH, '//*[@id="root"]/div/main/div/nav/ul/li[3]/button') #кнопка выхода из аккаунта
+	BUTTON_EXIT_FROM_ACCOUNT = (By.XPATH, '//button[ text()="Выход" ]') #кнопка Выход
 
-	CONSTRUCTOR_BUTTON = (By.XPATH, '//*[@id="root"]/div/header/nav/ul/li[1]/a') #constructor button
+	CONSTRUCTOR_BUTTON = (By.XPATH, '//p[contains(text(),"Конструктор")]') #constructor button
 
-	ROLLS_h = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]') #раздел rolls
+	ROLLS_h = (By.XPATH, '//span[text()="Булки"]/parent::div') #раздел булки
 
-	SAUCES_h = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]') #раздел sauces
+	SAUCES_h = (By.XPATH, '//span[text()="Соусы"]/parent::div') #раздел соусы
 
-	FILLINGS_h = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]') #раздел fillings
+	FILLINGS_h = (By.XPATH, '//span[text()="Начинки"]/parent::div') #раздел начинка
 
-	SAUCE_CART_FOR_ASSERT = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/ul[2]/a[1]') #карточка соуса
-
-	ROLLS_CART_FOR_ASSERT = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/ul[1]/a[1]') #карточка булок
-
-	FILLINGS_CART_FOR_ASSERT = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/ul[3]/a[1]') #карточка начинок
-
-	LOGO_STELLAR_BURGER_MAIN_PAGE = (By.XPATH, '//*[@id="root"]/div/header/nav/div/a/svg') #logo stellar burger main page
+	LOGO_STELLAR_BURGER_MAIN_PAGE = (By.XPATH, '//div[@class="AppHeader_header__logo__2D0X2"]') #logo stellar burger main page
